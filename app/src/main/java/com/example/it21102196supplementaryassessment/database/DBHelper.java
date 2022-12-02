@@ -1,5 +1,6 @@
 package com.example.it21102196supplementaryassessment.database;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -16,7 +17,7 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
     @Override
-    public void onCreate(SQLiteDatabase sqLiteDatabase) {
+    public void onCreate(SQLiteDatabase db) {
 
         String SQL_CREATE_ENTRIES = "CREATE TABLE " + UsersMaster.Users.TABLE_NAME + " (" +
                 UsersMaster.Users._ID + " INTEGER PRIMARY KEY , " +
@@ -25,6 +26,22 @@ public class DBHelper extends SQLiteOpenHelper {
                 UsersMaster.Users.COLUMN_NAME_ADDRESS + " TEXT," +
                 UsersMaster.Users.COLUMN_NAME_CONTACTNUMBER + " TEXT)";
 
+            db.execSQL(SQL_CREATE_ENTRIES);
+
+    }
+
+    public long addinfo(String name,String age,String address,String contactnumber){
+        SQLiteDatabase db = getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(UsersMaster.Users.COLUMN_NAME_NAME,name);
+        values.put(UsersMaster.Users.COLUMN_NAME_AGE,age);
+        values.put(UsersMaster.Users.COLUMN_NAME_ADDRESS,address);
+        values.put(UsersMaster.Users.COLUMN_NAME_CONTACTNUMBER,contactnumber);
+
+        long newRowId = db.insert(UsersMaster.Users.TABLE_NAME,null,values);
+
+        return db.insert(UsersMaster.Users.TABLE_NAME,null,values);
     }
 
     @Override
