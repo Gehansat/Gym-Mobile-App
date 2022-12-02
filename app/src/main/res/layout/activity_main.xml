@@ -102,5 +102,5 @@
         android:textSize="34sp"
         android:textStyle="bold"
         tools:layout_editor_absoluteX="108dp"
-        tools:layout_editor_absoluteY="25dp" />
+        tools:layout_editor_absoluteY="39dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
