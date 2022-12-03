@@ -40,9 +40,9 @@ public class MainActivity extends AppCompatActivity {
 
                 Boolean insertEx = db.addinfo(name, age,address,cnum);
                 if (insertEx == true) {
-                    Toast.makeText(MainActivity.this, "Exercise succesfully enetered", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Details succesfully enetered", Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(MainActivity.this, "Error adding exercise", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Error adding details", Toast.LENGTH_SHORT).show();
                 }
                 }
 
