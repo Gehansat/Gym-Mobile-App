@@ -30,22 +30,31 @@ public class DBHelper extends SQLiteOpenHelper {
 
     }
 
-    public long addinfo(String name,String age,String address,String contactnumber){
+    @Override
+    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
+
+    }
+
+    public boolean addinfo(String name,String age,String address,String cnum){
         SQLiteDatabase db = getWritableDatabase();
 
         ContentValues values = new ContentValues();
         values.put(UsersMaster.Users.COLUMN_NAME_NAME,name);
         values.put(UsersMaster.Users.COLUMN_NAME_AGE,age);
         values.put(UsersMaster.Users.COLUMN_NAME_ADDRESS,address);
-        values.put(UsersMaster.Users.COLUMN_NAME_CONTACTNUMBER,contactnumber);
+        values.put(UsersMaster.Users.COLUMN_NAME_CONTACTNUMBER,cnum);
 
-        long newRowId = db.insert(UsersMaster.Users.TABLE_NAME,null,values);
+        long result = db.insert(UsersMaster.Users.TABLE_NAME,null,values);
 
-        return db.insert(UsersMaster.Users.TABLE_NAME,null,values);
+        if (result == -1)
+            return false;
+        else
+            return true;
+
+
+
+
     }
 
-    @Override
-    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
 
-    }
 }

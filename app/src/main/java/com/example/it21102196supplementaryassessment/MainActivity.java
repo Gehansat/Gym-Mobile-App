@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
 
     Button btnadd;
     EditText addname,addage,addaddress,addcnum;
-    DBHelper dbHelper;
+    DBHelper db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +26,9 @@ public class MainActivity extends AppCompatActivity {
         addaddress = findViewById(R.id.addaddress);
         addcnum = findViewById(R.id.addcnum);
 
-        btnadd = findViewById(R.id.btnadd);
+        db = new DBHelper(this);
+
+        btnadd = (Button) findViewById(R.id.btnadd);
 
         btnadd.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -34,22 +36,17 @@ public class MainActivity extends AppCompatActivity {
                 String name = addname.getText().toString();
                 String age = addage.getText().toString();
                 String address = addaddress.getText().toString();
-                String contactnumber = addcnum.getText().toString();
+                String cnum = addcnum.getText().toString();
 
-                long checkinsertData = dbHelper.addinfo(name,age,address,contactnumber);
-                if(name.isEmpty()||age.isEmpty()||address.isEmpty()||contactnumber.isEmpty()){
-                    Toast.makeText(MainActivity.this, "Please Enter the Values", Toast.LENGTH_SHORT).show();
-                }else{
-                    long inserted = dbHelper.addinfo(name,age,address,contactnumber);
-
-                    if(inserted > 0){
-                        Toast.makeText(MainActivity.this, "Data Inserted Successfully", Toast.LENGTH_SHORT).show();
-                    }else{
-                        Toast.makeText(MainActivity.this, "Error ! Data not inserted!", Toast.LENGTH_SHORT).show();
-                    }
+                Boolean insertEx = db.addinfo(name, age,address,cnum);
+                if (insertEx == true) {
+                    Toast.makeText(MainActivity.this, "Exercise succesfully enetered", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(MainActivity.this, "Error adding exercise", Toast.LENGTH_SHORT).show();
+                }
                 }
 
-            }
+
         });
     }
 
