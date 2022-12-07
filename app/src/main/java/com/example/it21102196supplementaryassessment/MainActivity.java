@@ -1,4 +1,4 @@
-package com.example.it21102196supplementaryassessment.;
+package com.example.it21102196supplementaryassessment;
 
 import androidx.appcompat.app.AppCompatActivity;
 
