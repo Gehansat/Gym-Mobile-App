@@ -1,76 +1,46 @@
-package com.example.it21102196supplementaryassessment;
+package com.example.it21102196supplementaryassessment.;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import com.example.it21102196supplementaryassessment.database.DBHelper;
+import com.example.it21102196supplementaryassessment.add;
+import com.example.it21102196supplementaryassessment.view;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btnadd;
-    EditText addname,addage,addaddress,addcnum;
-    DBHelper db;
+    Button addudetails,viewudetails;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        addname = findViewById(R.id.addname);
-        addage = findViewById(R.id.addage);
-        addaddress = findViewById(R.id.addaddress);
-        addcnum = findViewById(R.id.addcnum);
-
-        db = new DBHelper(this);
-
-        btnadd = (Button) findViewById(R.id.btnadd);
-
-        btnadd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String name = addname.getText().toString();
-                String age = addage.getText().toString();
-                String address = addaddress.getText().toString();
-                String cnum = addcnum.getText().toString();
-
-                Boolean insertEx = db.addinfo(name, age,address,cnum);
-                if (insertEx == true) {
-                    Toast.makeText(MainActivity.this, "Details succesfully entered", Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(MainActivity.this, "Error adding details", Toast.LENGTH_SHORT).show();
-                }
-                }
 
 
+        addudetails = (Button) findViewById(R.id.button);
+        addudetails.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                openAdd();
+            }
+        });
+
+        viewudetails = (Button) findViewById(R.id.button15);
+        viewudetails.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                openView();
+            }
         });
     }
-
-//    public void saveUser(View view){
-//        String name = addname.getText().toString();
-//        String age = addage.getText().toString();
-//        String address = addaddress.getText().toString();
-//        String contactnumber = addcnum.getText().toString();
-//
-//        DBHelper dbHelper = new DBHelper(this);
-//
-//        if(name.isEmpty()||age.isEmpty()||address.isEmpty()||contactnumber.isEmpty()){
-//            Toast.makeText(this, "Please Enter the Values", Toast.LENGTH_SHORT).show();
-//        }else{
-//            long inserted = dbHelper.addinfo(name,age,address,contactnumber);
-//
-//            if(inserted > 0){
-//                Toast.makeText(this, "Data Inserted Successfully", Toast.LENGTH_SHORT).show();
-//            }else{
-//                Toast.makeText(this, "Error ! Data not inserted!", Toast.LENGTH_SHORT).show();
-//            }
-//        }
-
+    public void openAdd(){
+        Intent intent = new Intent(this, add.class );
+        startActivity(intent);
     }
 
-
-
+    public void openView(){
+        Intent intent = new Intent(this, view.class );
+        startActivity(intent);
+    }
+}
