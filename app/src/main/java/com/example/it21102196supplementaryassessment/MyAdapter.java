@@ -73,7 +73,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
         TextView name, age,email;
-        Button delete;
+        Button delete,update;
 
 
         public MyViewHolder(@NonNull View itemView) {
@@ -82,7 +82,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             age = itemView.findViewById(R.id.textage);
             email = itemView.findViewById(R.id.textemail);
             delete = (Button) itemView.findViewById(R.id.deleteBtn);
-
         }
     }
 }

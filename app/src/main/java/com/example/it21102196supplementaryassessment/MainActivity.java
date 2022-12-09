@@ -33,6 +33,9 @@ public class MainActivity extends AppCompatActivity {
                 openView();
             }
         });
+
+
+
     }
     public void openAdd(){
         Intent intent = new Intent(this, add.class );

@@ -97,7 +97,17 @@
 
                 app:cornerRadius="25sp" />
 
+
         </LinearLayout>
+        <Button
+            android:id="@+id/updateBtn"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Update"
+            android:textColor="@color/white"
+
+
+            app:cornerRadius="25sp" />
 
     </LinearLayout>
 </androidx.cardview.widget.CardView>
