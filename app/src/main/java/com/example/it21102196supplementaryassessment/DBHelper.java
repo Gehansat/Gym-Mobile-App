@@ -41,22 +41,6 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
 
-//    public boolean checkExercise(String Exercise) {
-//        SQLiteDatabase DB = this.getWritableDatabase();
-//        Cursor cursor = DB.rawQuery("select * from User where Exercise = ?", new String[]{Exercise});
-//        if (cursor.getCount() > 0) {
-//            return true;
-//        }
-//        else {
-//            return false;
-//        }
-//        }
-
-
-
-
-
-
     public Cursor getdata() {
         SQLiteDatabase DB = getWritableDatabase();
         Cursor e = DB.rawQuery("Select * from userdetails", null);

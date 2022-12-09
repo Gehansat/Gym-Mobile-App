@@ -36,9 +36,9 @@ public class add extends AppCompatActivity {
 
                 Boolean insertdetails = DB.insertuserdetails(name, age, email);
                 if (insertdetails == true) {
-                    Toast.makeText(add.this, "Exercise succesfully enetered", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(add.this, "User Details succesfully enetered", Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(add.this, "Error adding exercise", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(add.this, "Error adding User details", Toast.LENGTH_SHORT).show();
                 }
             }
         });

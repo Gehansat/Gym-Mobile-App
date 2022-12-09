@@ -4,19 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/Teal"
+    android:background="@drawable/bg"
     tools:context=".add"
     tools:layout_editor_absoluteX="0dp"
     tools:layout_editor_absoluteY="-24dp">
 
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:srcCompat="@drawable/top_background"
+        tools:layout_editor_absoluteX="0dp" />
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout3"
-        android:layout_width="412dp"
-        android:layout_height="156dp"
-        android:background="@color/teal_200"
+        android:layout_width="411dp"
+        android:layout_height="144dp"
+
+
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="-3dp"
-        tools:layout_editor_absoluteY="0dp">
+        tools:layout_editor_absoluteX="-1dp"
+        tools:layout_editor_absoluteY="-1dp">
 
         <ImageView
             android:id="@+id/logo"
@@ -26,7 +37,7 @@
             android:layout_marginTop="28dp"
             android:layout_marginEnd="127dp"
             android:layout_marginBottom="27dp"
-            android:src="@drawable/user"
+            android:src="@drawable/profile"
             android:textAlignment="center"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -39,15 +50,13 @@
 
     <TextView
         android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="142dp"
-        android:layout_marginTop="21dp"
-        android:layout_marginEnd="143dp"
+        android:layout_width="408dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="2dp"
         android:text="Add User"
-        android:textColor="#040000"
+        android:textAlignment="center"
+        android:textColor="#000000"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout3"
         tools:ignore="MissingConstraints" />
@@ -61,7 +70,10 @@
         android:hint="Name"
         android:inputType="textPersonName"
         android:text=""
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
@@ -70,14 +82,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="99dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="80dp"
         android:ems="10"
         android:hint="Age"
         android:inputType="textPersonName"
         android:text=""
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.09"
+        app:layout_constraintHorizontal_bias="0.136"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/addname" />
 
@@ -86,11 +100,13 @@
         android:layout_width="177dp"
         android:layout_height="61dp"
         android:layout_marginStart="118dp"
-        android:layout_marginTop="49dp"
+        android:layout_marginTop="48dp"
         android:layout_marginEnd="116dp"
         android:text="Add"
         android:textSize="20sp"
+        app:cornerRadius="25sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/addemail" />
 
@@ -98,13 +114,16 @@
         android:id="@+id/addemail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="102dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="99dp"
+        android:layout_marginStart="99dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="80dp"
         android:ems="10"
         android:hint="Email"
         android:inputType="textEmailAddress"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/addage" />
 
