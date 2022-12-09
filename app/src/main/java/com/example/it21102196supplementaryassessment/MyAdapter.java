@@ -62,7 +62,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
                     Toast.makeText(context, "Failed to delete", Toast.LENGTH_SHORT).show();
             }
         });
-
     }
 
     @Override
@@ -83,5 +82,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             email = itemView.findViewById(R.id.textemail);
             delete = (Button) itemView.findViewById(R.id.deleteBtn);
         }
+
+
     }
 }
